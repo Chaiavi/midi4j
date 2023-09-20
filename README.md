@@ -1,4 +1,4 @@
-# jMidi
+# midi4j
 **Midi** Sound Files **Player** and **Meta** Parser
 
 
@@ -13,7 +13,7 @@ and call the relevant methods.
 
 Methods names are self explanatory, and JavaDocs exist - these are your friends.
 
-jMidi was created with convenience and simplicity in mind, so it consists of only two important files.
+midi4j was created with convenience and simplicity in mind, so it consists of only two important files.
 
 Midi.java - which is used to play/pause/jumpToPosition the Midi file.
 MidiInfo.java - is used to parse the Meta Information from the Midi file (if midi info was indeed put into the Midi file)

@@ -1,13 +1,16 @@
 package org.chaiware.midi4j;
 
-import org.chaiware.model.Lyric;
-import org.chaiware.model.MidiMetaMessageType;
+import org.chaiware.midi4j.model.Lyric;
+import org.chaiware.midi4j.model.MidiMetaMessageType;
 
 import javax.sound.midi.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * In charge of the Midi META Information like Song name, Artist, Disclaimer, Lyrics etc.

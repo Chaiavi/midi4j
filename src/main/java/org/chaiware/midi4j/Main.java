@@ -1,7 +1,7 @@
 package org.chaiware.midi4j;
 
-import org.chaiware.model.Lyric;
-import org.chaiware.model.MidiMetaMessageType;
+import org.chaiware.midi4j.model.Lyric;
+import org.chaiware.midi4j.model.MidiMetaMessageType;
 
 import javax.swing.*;
 import java.util.Map;
