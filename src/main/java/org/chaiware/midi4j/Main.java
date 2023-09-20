@@ -35,6 +35,7 @@ public class Main {
 
         // Play the midi file and show the lyrics (if they exist) in their specific time in the song
         midi.play(); // Asynchronously
+
         if (!midiInfo.getLyrics().isEmpty()) { // If lyrics exist then show them when they are supposed to be shown like karaoke
             for (Lyric lyric : midiInfo.getLyrics()) {
                 Thread.sleep(lyric.getDeltaTime());
