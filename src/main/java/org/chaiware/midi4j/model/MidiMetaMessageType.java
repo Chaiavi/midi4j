@@ -45,7 +45,11 @@ public enum MidiMetaMessageType {
         return formattedName.toString();
     }
 
-    /** Identifies the meta flags which represent Textual messages (Except for Lyrics which are textual but will be returned to the user using a special method) */
+    /**
+     * Identifies the meta flags which represent Textual messages (Except for Lyrics which are textual but will be returned to the user using a special method)
+     *
+     * @return booleanic answer if this is MetaMessage is of TEXT type or is it a binary type
+     */
     public boolean isOfTextType() {
         return this == MidiMetaMessageType.SEQUENCE_TRACK_NAME
                 || this == MidiMetaMessageType.TEXT_EVENT

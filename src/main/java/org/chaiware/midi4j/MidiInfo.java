@@ -50,6 +50,8 @@ public class MidiInfo {
 
     /**
      * Parse a specific MetaMessage from the Midi file
+     * @param requestedMetaMessageType which Meta Message do you want to parse from the Midi file
+     * @return The requested Metadata
      */
     public String getMetaInfo(MidiMetaMessageType requestedMetaMessageType) {
         StringBuilder metaData = new StringBuilder();
@@ -104,7 +106,7 @@ public class MidiInfo {
 
 
     /**
-     * Returns midi length in MicroSeconds
+     * @return midi length in MicroSeconds
      */
     public long getMidiLengthInMS() {
         return sequence.getMicrosecondLength();

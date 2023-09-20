@@ -8,7 +8,7 @@ import java.util.Map;
 
 
 /**
- * Simple Main Class showing off the Midi & MidiInfo capabilities, including showing lyrics when they exist
+ * Simple Main Class showing off the Midi and MidiInfo capabilities, including showing lyrics when they exist
  */
 public class Main {
     public static void main(String[] args) throws Exception {

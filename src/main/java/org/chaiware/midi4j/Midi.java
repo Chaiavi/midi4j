@@ -1,6 +1,9 @@
 package org.chaiware.midi4j;
 
-import javax.sound.midi.*;
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.Sequence;
+import javax.sound.midi.Sequencer;
+import javax.sound.midi.Synthesizer;
 import java.io.File;
 
 /** Midi Class enabling to Parse a Midi file and play the song (with play/pause, and jumping to a specific position in the song) */
@@ -16,7 +19,7 @@ public class Midi {
         sequencer.setSequence(sequence);
     }
 
-    /** Main method - Plays the Midi file<br/>
+    /** Main method - Plays the Midi file
      * Please note that it is Asynchronously playing */
     public void play() {
         sequencer.start();
@@ -51,12 +54,15 @@ public class Midi {
         return isPaused;
     }
 
-    /** Returns the current position in the Midi in microseconds */
+    /**
+     * @return current position in the Midi in microseconds
+     */
     public long getCurrentPositionInMS() {
         return sequencer.getMicrosecondPosition();
     }
 
-    /** Jumps to the argumented time position in the Midi file and will play from there */
+    /** Jumps to the argumented time position in the Midi file and will play from there
+     * @param positionInMS The MicroSecond you want to navigate to */
     public void jumpToPositionInMS(long positionInMS) {
         sequencer.setMicrosecondPosition(positionInMS);
     }
