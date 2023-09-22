@@ -52,7 +52,7 @@ file)
   
   
 ### Simple Project Using Midi4j
-You can see a simple project using midi4j here: [FloppyMidiPlayer]([url](https://github.com/Chaiavi/FloppyMidiPlayer)https://github.com/Chaiavi/FloppyMidiPlayer)
+You can see a simple project using midi4j here: [FloppyMidiPlayer](https://github.com/Chaiavi/FloppyMidiPlayer)  
 The above project uses midi4j in order to play Midi files from Floppy diskettes  
 
-It's code is simple to understand, it scans the floppy diskette and plays all the midi files it finds in it, while enabling navigation in the Midi file, pausing it and looking at the MetaInfo in the Midi file.
+Its code is simple to understand, it scans the floppy diskette and plays all the midi files it finds in it, while enabling navigation in the Midi file, pausing it and looking at the MetaInfo in the Midi file.
