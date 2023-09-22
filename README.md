@@ -1,5 +1,5 @@
 # midi4j
-**Midi** Sound Files **Player** and **Meta** Parser
+**Midi** Sound Files **Player** and **Meta Info** Parser
 
 
 Java implementation of a Midi file Player & Midi Meta Info Parser Library.
@@ -32,7 +32,7 @@ file)
 
 ## Examples
 
-###### (A complete example with additional functionality can be found in the `Main.java` file)
+###### (A complete example with additional functionality can be found in the `Midi4jExample.java` file)
 
 #### Midi Player Example
 
