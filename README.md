@@ -24,11 +24,15 @@ file)
 
 
 ## Maven
--
+`<dependency>`  
+`    <groupId>org.chaiware</groupId>`  
+`    <artifactId>midi4j</artifactId>`  
+`    <version>1.0</version>`  
+`</dependency>`  
 
 ## Examples
 
-###### (A complete example can be found in the `Main.java` file)
+###### (A complete example with additional functionality can be found in the `Main.java` file)
 
 #### Midi Player Example
 
@@ -36,7 +40,7 @@ file)
 `midi.play(); // Plays Asynchronously`  
 `midi.jumpToPositionInMS(midi.getCurrentPositionInMS() + 50000); // Jumps forward`  
 `while (midi.isPlaying())`  
-`Thread.sleep(250);`  
+`    Thread.sleep(250);`  
 `midi.shutdown();`
 
 #### Midi Info Example
@@ -44,4 +48,4 @@ file)
 `MidiInfo midiInfo = new MidiInfo($PATH_TO_MIDI_FILE$);`  
 `Map<MidiMetaMessageType, String> metaInfo = midiInfo.getAllMetaInfo();`  
 `for (Map.Entry<MidiMetaMessageType, String> entry : metaInfo.entrySet())`  
-`System.out.println(entry.getKey().getReadableMetaName() + "\n" + entry.getValue() + "\n\n");`  
+`    System.out.println(entry.getKey().getReadableMetaName() + "\n" + entry.getValue() + "\n\n");`  
