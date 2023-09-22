@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Simple Main Class showing off the Midi and MidiInfo capabilities, including showing lyrics when they exist
  */
-public class Main {
+public class Midi4jExample {
     public static void main(String[] args) throws Exception {
         // Choose a Midi file to play and show Meta info
         String midiFilePath = "Please choose a Midi file using the JFileChooser";
