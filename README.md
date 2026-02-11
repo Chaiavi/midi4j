@@ -1,58 +1,87 @@
-# midi4j
-**Midi** Sound Files **Player** and **Meta Info** Parser
+<p align="center">
+  <h1 align="center">midi4j</h1>
+  <p align="center">
+    <em>MIDI Player & Meta Info Parser for Java</em>
+  </p>
+  <p align="center">
+    <img src="https://img.shields.io/badge/Pure_Java-☕-orange?style=flat-square" alt="Pure Java"/>
+    <img src="https://img.shields.io/badge/Zero_Dependencies-⚡-green?style=flat-square" alt="Zero Dependencies"/>
+    <img src="https://img.shields.io/badge/version-1.0-blue?style=flat-square" alt="Version 1.0"/>
+  </p>
+</p>
 
+---
 
-Java implementation of a Midi file Player & Midi Meta Info Parser Library.
-This implementation is using vanilla Java classes without any 3rd party libraries.
+## Overview
 
-If you just want to play a Midi file and don't want to delve into the midi classes (Like the Sequencer, Synthesizer, Tracks etc),
-then just use the `Midi` class, point it to your Midi file and use the `play()` method to play it, `togglePause()` to
-unqpause or navigate to any place in the Midi file `jumpToPosition(long milliseconds)`.
+**midi4j** is a Java library for playing MIDI sound files and parsing their metadata — built entirely with vanilla Java classes, **no third-party libraries required**.
 
-If you want to parse a Midi file, to read the MetaData written about it, from a Disclaimer, to copyright notice, through
-titles and the track messages then just use the `MidiInfo` class
-and call the relevant methods.
+If you just want to play a MIDI file without delving into low-level classes like `Sequencer`, `Synthesizer`, or `Tracks`, simply use the `Midi` class — point it to your file, call `play()`, `togglePause()`, or navigate with `jumpToPosition(long milliseconds)`.
 
-Methods names are self-explanatory, and JavaDocs exist - these are your friends.
+If you want to read metadata from a MIDI file — disclaimers, copyright notices, titles, track messages — use the `MidiInfo` class and call the relevant methods.
 
-**_midi4j_** was created with convenience and simplicity in mind, so it consists of only those two important files.
+> 💡 Method names are self-explanatory and JavaDocs are provided — they're your best friends when exploring the API.
 
-`Midi.java` - which is used to play/pause/jumpToPosition the Midi file.
+---
 
-`MidiInfo.java` - is used to parse the Meta Information from the Midi file (if midi info was indeed put into the Midi
-file)
+## Core Components
 
+**midi4j** was created with convenience and simplicity in mind, consisting of just two core files:
+
+| File | Purpose |
+|:-----|:--------|
+| ▶️ **`Midi.java`** | Play, pause, and navigate MIDI files (`play()`, `togglePause()`, `jumpToPosition()`) |
+| 🔍 **`MidiInfo.java`** | Parse metadata from MIDI files (disclaimers, copyrights, titles, track messages) |
+
+---
 
 ## Maven
-`<dependency>`  
-`    <groupId>org.chaiware</groupId>`  
-`    <artifactId>midi4j</artifactId>`  
-`    <version>1.0</version>`  
-`</dependency>`  
+
+```xml
+<dependency>
+    <groupId>org.chaiware</groupId>
+    <artifactId>midi4j</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
+---
 
 ## Examples
 
-###### (A complete example with additional functionality can be found in the `Midi4jExample.java` file)
+> A complete example with additional functionality can be found in the **`Midi4jExample.java`** file.
 
-#### Midi Player Example
+### ▶️ Midi Player
 
-`Midi midi = new Midi($PATH_TO_MIDI_FILE$);`  
-`midi.play(); // Plays Asynchronously`  
-`midi.jumpToPositionInMS(midi.getCurrentPositionInMS() + 50000); // Jumps forward`  
-`while (midi.isPlaying())`  
-`    Thread.sleep(250);`  
-`midi.shutdown();`
+```java
+Midi midi = new Midi($PATH_TO_MIDI_FILE$);
 
-#### Midi Info Example
+midi.play();  // Plays Asynchronously
 
-`MidiInfo midiInfo = new MidiInfo($PATH_TO_MIDI_FILE$);`  
-`Map<MidiMetaMessageType, String> metaInfo = midiInfo.getAllMetaInfo();`  
-`for (Map.Entry<MidiMetaMessageType, String> entry : metaInfo.entrySet())`  
-`    System.out.println(entry.getKey().getReadableMetaName() + "\n" + entry.getValue() + "\n\n");`  
-  
-  
-### Simple Project Using Midi4j
-You can see a simple project using midi4j here: [FloppyMidiPlayer](https://github.com/Chaiavi/FloppyMidiPlayer)  
-The above project uses midi4j in order to play Midi files from Floppy diskettes  
+midi.jumpToPositionInMS(midi.getCurrentPositionInMS() + 50000);  // Jump forward
 
-Its code is simple to understand, it scans the floppy diskette and plays all the midi files it finds in it, while enabling navigation in the Midi file, pausing it and looking at the MetaInfo in the Midi file.
+while (midi.isPlaying())
+    Thread.sleep(250);
+
+midi.shutdown();
+```
+
+### 🔍 Midi Info Parser
+
+```java
+MidiInfo midiInfo = new MidiInfo($PATH_TO_MIDI_FILE$);
+
+Map<MidiMetaMessageType, String> metaInfo = midiInfo.getAllMetaInfo();
+
+for (Map.Entry<MidiMetaMessageType, String> entry : metaInfo.entrySet())
+    System.out.println(
+        entry.getKey().getReadableMetaName() + "\n" +
+        entry.getValue() + "\n\n"
+    );
+```
+
+---
+
+## 💾 Project Using midi4j
+
+**[FloppyMidiPlayer](https://github.com/Chaiavi/FloppyMidiPlayer)** — A simple project that uses midi4j to play MIDI files from floppy diskettes. It scans the diskette, plays all MIDI files it finds, and enables navigation, pausing, and viewing MetaInfo — all powered by midi4j.
